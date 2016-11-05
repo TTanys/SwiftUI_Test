@@ -14,10 +14,10 @@ class ZZDetailViewController: UIViewController {
         super.viewDidLoad()
         
         title = "详情"
-        view.backgroundColor = UIColor.greenColor()
+        view.backgroundColor = UIColor.whiteColor()
         
         let btn = UIButton(type: UIButtonType.Custom)
-        btn.frame = CGRect(x: 50, y: 50, width: 100, height: 40)
+        btn.frame = CGRect(x: 50, y: 64, width: 100, height: 40)
         btn.backgroundColor = UIColor.redColor()
         btn.tag = 10
         btn.addTarget(self, action: #selector(btnClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
