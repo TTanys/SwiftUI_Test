@@ -15,11 +15,11 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         
         self.delegate = self
         //self.tabBar.translucent = false
-        self.tabBar.tintColor = UIColor.greenColor()
-        self.tabBar.barTintColor = UIColor.whiteColor()
+        self.tabBar.tintColor = UIColor.green
+        self.tabBar.barTintColor = UIColor.white
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName:UIFont.systemFontOfSize(13)], forState: UIControlState.Normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName:UIFont.systemFontOfSize(13)], forState: UIControlState.Selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 13)], for: UIControlState())
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 13)], for: UIControlState.selected)
         
         let oneVc = ViewController()
         let twoVc = MyFriendsViewController()
@@ -37,36 +37,36 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         nav4.title = "设置"
         
         nav1.tabBarItem.image = UIImage(named: "jiyinjiemi")
-        nav1.tabBarItem.selectedImage = UIImage(named: "jiyinjiemi_s")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        nav1.tabBarItem.selectedImage = UIImage(named: "jiyinjiemi_s")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         nav2.tabBarItem.image = UIImage(named: "jiankangguanli")
-        nav2.tabBarItem.selectedImage = UIImage(named: "jiankangguanli_s")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        nav2.tabBarItem.selectedImage = UIImage(named: "jiankangguanli_s")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         nav3.tabBarItem.image = UIImage(named: "shishangshenghuo")
-        nav3.tabBarItem.selectedImage = UIImage(named: "shishangshenghuo_s")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        nav3.tabBarItem.selectedImage = UIImage(named: "shishangshenghuo_s")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         nav4.tabBarItem.image = UIImage(named: "jiyinjiemi")
-        nav4.tabBarItem.selectedImage = UIImage(named: "jiyinjiemi_s")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        nav4.tabBarItem.selectedImage = UIImage(named: "jiyinjiemi_s")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         
         self.viewControllers = [nav1,nav2,nav3,nav4]
         
     }
     
-    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         
         print("SelectControllerIndex:\(self.selectedIndex)")
         if self.selectedIndex == 0 {
-            self.tabBar.tintColor = UIColor.greenColor()
+            self.tabBar.tintColor = UIColor.green
         }else if self.selectedIndex == 1{
-            self.tabBar.tintColor = UIColor.yellowColor()
+            self.tabBar.tintColor = UIColor.yellow
         }else if self.selectedIndex == 2{
-            self.tabBar.tintColor = UIColor.redColor()
+            self.tabBar.tintColor = UIColor.red
         }else if self.selectedIndex == 3{
-            self.tabBar.tintColor = UIColor.greenColor()
+            self.tabBar.tintColor = UIColor.green
         }
         
     }
     
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
 }

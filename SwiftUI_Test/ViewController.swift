@@ -15,19 +15,19 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         self.title = "聊天"
         
-        let btn = UIButton(type: .Custom)
+        let btn = UIButton(type: .custom)
         btn.frame = CGRect(x: 10, y: 30, width: 100, height: 30)
-        btn.backgroundColor = UIColor.redColor()
+        btn.backgroundColor = UIColor.red
         btn.tag = 3
-        btn.addTarget(self, action:#selector(btnOnClick(_:)), forControlEvents: .TouchUpInside)
+        btn.addTarget(self, action:#selector(btnOnClick(_:)), for: .touchUpInside)
         view .addSubview(btn)
         
         var i = 3
         i = i + 1
         
         
-        let myTableView = UITableView(frame: CGRectMake(0, 64, UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height - 64 - 49), style: UITableViewStyle.Plain)
-        myTableView.backgroundColor = UIColor.orangeColor()
+        let myTableView = UITableView(frame: CGRect(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - 64 - 49), style: UITableViewStyle.plain)
+        myTableView.backgroundColor = UIColor.orange
         myTableView.delegate = self
         myTableView.dataSource = self
         view.addSubview(myTableView)
@@ -35,28 +35,28 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
     }
     
-    func btnOnClick(button: UIButton){
+    func btnOnClick(_ button: UIButton){
        print("hello button\(button.tag)")
     }
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier: String = "CellId"
-        var chatCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? ChatTableViewCell
+        var chatCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? ChatTableViewCell
         if chatCell == nil {
-            chatCell = ChatTableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
+            chatCell = ChatTableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: cellIdentifier)
             
         }
         if indexPath.row%2 == 0 {
@@ -76,7 +76,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Row:\(indexPath.row)")
         let detailVc = ZZDetailViewController()
         

@@ -14,44 +14,53 @@ class ZZDetailViewController: UIViewController {
         super.viewDidLoad()
         
         title = "详情"
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         
-        let btn = UIButton(type: UIButtonType.Custom)
+        let btn = UIButton(type: UIButtonType.custom)
         btn.frame = CGRect(x: 50, y: 64, width: 100, height: 40)
-        btn.backgroundColor = UIColor.redColor()
+        btn.backgroundColor = UIColor.red
         btn.tag = 10
-        btn.addTarget(self, action: #selector(btnClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(btnClicked(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(btn)
         
         
-        let btn2 = UIButton(type: UIButtonType.Custom)
-        btn2.frame = CGRect(x: 50, y: UIScreen.mainScreen().bounds.size.height-40, width: 100, height: 40)
-        btn2.backgroundColor = UIColor.redColor()
+        let btn2 = UIButton(type: UIButtonType.custom)
+        btn2.frame = CGRect(x: 50, y: UIScreen.main.bounds.size.height-40, width: 100, height: 40)
+        btn2.backgroundColor = UIColor.red
         btn2.tag = 20
-        btn2.addTarget(self, action: #selector(btnClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        btn2.addTarget(self, action: #selector(btn2Clicked(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(btn2)
 
         
         // Do any additional setup after loading the view.
     }
     
-    func btnClicked(btn: UIButton) -> Void {
+    func btnClicked(_ btn: UIButton) -> Void {
         print("btnClicked\(btn.tag)")
         print("修改测试")
-        self.navigationController?.popViewControllerAnimated(true)
-        
+        self.navigationController?.popViewController(animated: true)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    func btn2Clicked(_ btn: UIButton) -> Void {
+        print("btn2Clicked\(btn.tag)")
+        let vc = ViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.hidden = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.tabBarController?.tabBar.hidden = false
+        self.tabBarController?.tabBar.isHidden = false
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

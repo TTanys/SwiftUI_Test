@@ -21,32 +21,32 @@ class ChatTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
         
         self.configSubViews()
         
     }
     
     func configSubViews() -> Void {
-        headImgView = UIImageView(frame: CGRectMake(10, 10, 80, 40))
-        headImgView.contentMode = UIViewContentMode.ScaleAspectFill
+        headImgView = UIImageView(frame: CGRect(x: 10, y: 10, width: 80, height: 40))
+        headImgView.contentMode = UIViewContentMode.scaleAspectFill
         headImgView.layer.cornerRadius = 6
         headImgView.layer.masksToBounds = true
-        headImgView.layer.borderColor = UIColor.redColor().CGColor
+        headImgView.layer.borderColor = UIColor.red.cgColor
         headImgView.layer.borderWidth = 0.5
         self.contentView.addSubview(headImgView!)
-        nameLab = UILabel(frame: CGRectMake(CGRectGetMaxX((headImgView?.frame)!)+10, 10, 150, 16))
-        nameLab?.font = UIFont.systemFontOfSize(15)
-        nameLab?.textColor = UIColor.grayColor()
+        nameLab = UILabel(frame: CGRect(x: (headImgView?.frame)!.maxX+10, y: 10, width: 150, height: 16))
+        nameLab?.font = UIFont.systemFont(ofSize: 15)
+        nameLab?.textColor = UIColor.gray
         self.contentView.addSubview(nameLab!)
-        summaryLab = UILabel(frame: CGRectMake(CGRectGetMaxX((headImgView?.frame)!)+10, CGRectGetMaxY((headImgView?.frame)!)-15, 150, 15))
-        summaryLab?.font = UIFont.systemFontOfSize(14)
-        summaryLab?.textColor = UIColor.lightGrayColor()
+        summaryLab = UILabel(frame: CGRect(x: (headImgView?.frame)!.maxX+10, y: (headImgView?.frame)!.maxY-15, width: 150, height: 15))
+        summaryLab?.font = UIFont.systemFont(ofSize: 14)
+        summaryLab?.textColor = UIColor.lightGray
         self.contentView.addSubview(summaryLab!)
         
     }
     
-    internal func updateWithModel(model: ChatModel) -> Void {
+    internal func updateWithModel(_ model: ChatModel) -> Void {
         print("调用了")
         
         //        headImgView.image = UIImage(named: "Image1")
@@ -58,7 +58,7 @@ class ChatTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
