@@ -14,6 +14,7 @@ class MyFriendsViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "好友"
+        view.backgroundColor = UIColor.red
     }
 
     

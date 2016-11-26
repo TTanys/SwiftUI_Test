@@ -14,9 +14,6 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         super.viewDidLoad()
         
         self.delegate = self
-        //self.tabBar.translucent = false
-        self.tabBar.tintColor = UIColor.green
-        self.tabBar.barTintColor = UIColor.white
         
         UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 13)], for: UIControlState())
         UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 13)], for: UIControlState.selected)
@@ -47,8 +44,18 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         
         self.viewControllers = [nav1,nav2,nav3,nav4]
         
+        
+        //透明度 默认为 true
+        //self.tabBar.isTranslucent = false
+        //tabBar背景色 默认为 nil
+        //self.tabBar.barTintColor = UIColor.white
+        //如果不设置默认 self.selectedIndex = 0
+        //self.tabBar.tintColor = UIColor.green
+        self.selectedIndex = 1
+        self.tabBar.tintColor = UIColor.yellow
     }
     
+    // MARK: - UITabBarControllerDelegate
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         
         print("SelectControllerIndex:\(self.selectedIndex)")
