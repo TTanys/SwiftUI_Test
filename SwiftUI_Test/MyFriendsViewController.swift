@@ -15,6 +15,22 @@ class MyFriendsViewController: UIViewController {
         
         self.title = "好友"
         view.backgroundColor = UIColor.red
+        
+        
+        var strArr = ["haha","123","nimeia","afanda","999"]
+        strArr[1] = "666"
+        print("\(strArr)")
+        
+        var dic = ["Malcolm":"Captain","Kaylee":"Mechanic","Zjj":"self"]
+        dic["Jayne"] = "PublicRelations"
+        dic["Zjj"] = "zhajianjun"
+        print("\(dic)")
+        
+//        let emptyArr = String[]()
+//        let emptyDic = [:]
+//        print("\(emptyArr)\(emptyDic)")
+        
+        
     }
 
     

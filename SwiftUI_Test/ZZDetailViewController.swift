@@ -38,7 +38,7 @@ class ZZDetailViewController: UIViewController {
     func btnClicked(_ btn: UIButton) -> Void {
         print("btnClicked\(btn.tag)")
         print("修改测试")
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     func btn2Clicked(_ btn: UIButton) -> Void {
