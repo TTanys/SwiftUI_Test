@@ -51,8 +51,8 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
         //self.tabBar.barTintColor = UIColor.white
         //如果不设置默认 self.selectedIndex = 0
         //self.tabBar.tintColor = UIColor.green
-        self.selectedIndex = 1
-        self.tabBar.tintColor = UIColor.yellow
+        self.selectedIndex = 0
+        self.tabBar.tintColor = UIColor.green
     }
     
     // MARK: - UITabBarControllerDelegate

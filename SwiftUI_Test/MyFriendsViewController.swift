@@ -14,7 +14,7 @@ class MyFriendsViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "好友"
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.orange
         
         
         var strArr = ["haha","123","nimeia","afanda","999"]
